@@ -22,7 +22,7 @@ local OrionLib = {
 	},
 	SelectedTheme = "Default",
 	Folder = nil,
-	SaveCfg = false
+	SaveCfg = true
 }
 
 --Feather Icons https://github.com/evoincorp/lucideblox/tree/master/src/modules/util - Created by 7kayoh
@@ -33,7 +33,7 @@ local Success, Response = pcall(function()
 end)
 
 if not Success then
-	warn("\nOrion Library - Failed to load Feather Icons. Error code: " .. Response .. "\n")
+	warn("\nOrion Library - 无法加载图标。 错误代码： " .. Response .. "\n")
 end	
 
 local function GetIcon(IconName)
@@ -254,7 +254,7 @@ end
 
 CreateElement("Corner", function(Scale, Offset)
 	local Corner = Create("UICorner", {
-		CornerRadius = UDim.new(Scale or 0, Offset or 10)
+		CornerRadius = UDim.new(Scale or 0, Offset or 15)
 	})
 	return Corner
 end)
